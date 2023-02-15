@@ -16,7 +16,6 @@ namespace LinqSample005
             
             
             var person1 = list.LastOrDefault((x) => x.Age > 35);
-            Console.WriteLine($"大於 35 歲的人最後一個被找到的是:{person1.Name}");
             // 因為找不到, 就會跳出例外
             try 
             {
