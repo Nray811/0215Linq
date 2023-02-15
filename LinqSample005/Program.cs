@@ -25,7 +25,6 @@ namespace LinqSample005
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
-
             var person3 = list.SingleOrDefault((x) => x.Name == "Derrick");          
             // 因為找不到, 就會跳出例外
             if (person3 == null)
@@ -37,8 +36,20 @@ namespace LinqSample005
             {
                 Console.WriteLine($"找到 : {person3.Name}  {person3.Age}歲");
             }
-            Console.WriteLine("Pig");
-            Console.ReadLine();
+
+            int index = 1;
+            var person4 = list.ElementAtOrDefault(index);
+            if (person4 == null)
+            {
+                Console.WriteLine("查無此人");
+            }
+            else
+            {
+                Console.WriteLine($"找到索引為 : {index} 的人是 {person4.Name}  { person4.Age}");
+            }
+
+
+
         }
 
         static List<Mydata> CreateList()
