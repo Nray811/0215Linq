@@ -45,10 +45,39 @@ namespace LinqSample005
             }
             else
             {
-                Console.WriteLine($"找到索引為 : {index} 的人是 {person4.Name}  { person4.Age}");
+                Console.WriteLine($"找到索引為 :{index}的人是 {person4.Name}{ person4.Age}");
+            }
+            string name = "Bro";
+            bool result = list.Any((x) => x.Name == name);
+            if (result)
+            {
+                Console.WriteLine($"找到了 :{name}");
+            }
+            else
+            {
+                Console.WriteLine($"找不到 :{name}");
             }
 
-
+            string name1 = "John";
+            bool isAllBill = list.All((x) => x.Name == name);
+            if (isAllBill)
+            {
+                Console.WriteLine($"全都是 {name1}");
+            }
+            else
+            {
+                Console.WriteLine($"有些人不叫 {name1}");
+            }
+            bool isAllOverForty = list.All((x) => x.Age >= 40);
+            if (isAllOverForty)
+            {
+                Console.WriteLine("大家都超過 40 歲");
+            }
+            else
+            {
+                Console.WriteLine("有人不到 40 歲");
+            }
+            Console.ReadLine();
 
         }
 
