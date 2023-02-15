@@ -76,6 +76,8 @@ namespace LinqSample005
             {
                 Console.WriteLine("有人不到 40 歲");
             }
+
+            Console.WriteLine("有人在搞");
             Console.ReadLine();
 
         }
