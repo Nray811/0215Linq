@@ -80,7 +80,6 @@ namespace Linqmath
 
 
 
-            Console.ReadLine();
            
         }
 
