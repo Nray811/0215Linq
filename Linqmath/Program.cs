@@ -61,27 +61,46 @@ namespace Linqmath
             }
 
             Console.WriteLine();
-            var result =  list1.Except(list2).Union(list2.Except(list1)); //
+            var result =  list1.Except(list2).Union(list2.Except(list1)); 
             foreach (var i in result)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine();
-            var result1 = list1.Union(list2).Except(list1.Intersect(list2)); //
+            var result1 = list1.Union(list2).Except(list1.Intersect(list2)); 
             foreach (var i in result1)
             {
                 Console.WriteLine(i);
             }
 
-
-
-
-
-
-
-
-           
+            var list3 = new List<string> { "台北", "台北", "洛杉磯", "紐約", "紐約", "台北" };
+            var result3 = list3.Distinct(); //排除重複
+            foreach (var item in result3)
+            {
+                Console.WriteLine(item);
+            }
+            var list4 = new List<string> { "A", "B", "C", "D", "E", "F", "G" };
+            var resultOfSkip = list4.Skip(5).Take(2).Skip(1);
+            Console.WriteLine("Skip(3) 的結果 ");
+            Display(resultOfSkip);
+            var resultOfTake = list4.Take(3);
+            Console.WriteLine("Take(3) 的結果 ");
+            Display(resultOfTake);
+            var resultOfSkipTake = list4.Skip(2).Take(2);
+            Console.WriteLine("Skip(2).Take(2) 的結果 ");
+            Display(resultOfSkipTake);
+            Console.ReadLine();
+               
         }
+
+        static void Display(IEnumerable<string> source)
+        {
+            foreach (var item in source)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
 
         static List<Mydata> CreateList()
         {
